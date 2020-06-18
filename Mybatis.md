@@ -2398,3 +2398,84 @@ public void testSelectUserById() {
 </ehcache>
 ```
 
+
+
+## 配置文件总结
+
+```properties
+driver=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://localhost:3306/mybatis?usSLL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+username=root
+password=root
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties" />
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+<!--        <setting name="cacheEnabled" value="true"/>-->
+    </settings>
+    <typeAliases>
+        <package name="edu.usc.pojo"></package>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper class="edu.usc.dao.UserMapper"></mapper>
+    </mappers>
+
+</configuration>
+```
+
+```java
+package edu.usc.util;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+//sqlSessionFactory
+    public class MybatisUtils {
+
+        private static SqlSessionFactory sqlSessionFactory; // 提升sqlSessionFactory作用域
+
+        /*
+        * 获取sqlSessionFactory对象
+        * */
+        static {
+            String resource = "mybatis-config.xml";
+            try {
+                InputStream inputStream = Resources.getResourceAsStream(resource); //加载配置文件 并生成流
+                sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream); // 因为之前已经进行过类型声明 所以这里不需要再声明了
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        /*
+        * 获取到sqlSessionFactory之后，获取sqlSession实例，其包含了面向数据库执行SQL命令的所有方法
+        * */
+        public static SqlSession getSqlSession() {
+            return sqlSessionFactory.openSession(true);
+        }
+    }
+```
