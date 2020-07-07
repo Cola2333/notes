@@ -50,7 +50,7 @@
 
 ### 首先将项目clone到idea上
 
-![image-20200518154152451](C:\WJJ\StudyInUSC\spring踩坑与学习\Git的操作-images\image-20200518154152451.png)
+![image-20200518154152451](Git的操作.assets/image-20200518154152451.png)
 
 
 

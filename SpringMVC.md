@@ -1463,7 +1463,7 @@ var json = JSON.stringify({a: 'Hello', b: 'World'});
 
 3、在IDEA中使用浏览器打开，查看控制台输出！
 
-![image-20200616182240975](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200616182240975.png)
+![image-20200616182240975](SpringMVC.assets/image-20200616182240975.png)
 
 ### Controller返回JSON数据
 
@@ -1603,7 +1603,7 @@ public class UserController {
 
 http://localhost:8080/json1
 
-![image-20200616211346693](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200616211346693.png)
+![image-20200616211346693](SpringMVC.assets/image-20200616211346693.png)
 
 发现出现了乱码问题，我们需要设置一下他的编码格式为utf-8，以及它返回的类型；
 
@@ -1616,7 +1616,7 @@ http://localhost:8080/json1
 
 再次测试， http://localhost:8080/json1 ， 乱码问题OK！
 
-![image-20200616211516768](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200616211516768.png)
+![image-20200616211516768](SpringMVC.assets/image-20200616211516768.png)
 
 **注意：使用json记得处理乱码问题**
 

@@ -28,7 +28,7 @@ https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/
 
 ## 登录流程图
 
-![image-20200412140243260](C:\WJJ\StudyInUSC\spring踩坑与学习\image\image-20200412140243260.png)
+![image-20200412140243260](项目spring踩坑与学习.assets/image-20200412140243260.png)
 
 token 记录
 
@@ -118,7 +118,7 @@ select * from user where account_id=#{creator} limit 1
 
 ## 数据库设计
 
-![QQ截图20200412200456](C:\WJJ\StudyInUSC\spring踩坑与学习\image\QQ截图20200412200456.png)
+![QQ截图20200412200456](项目spring踩坑与学习.assets/QQ截图20200412200456.png)
 
 ACCOUNT_ID github返回值里带的id
 
@@ -157,7 +157,7 @@ spring.datasource.driver-class-name=org.h2.Driver
 
 解决方法：
 
-![QQ截图20200412213110](C:\WJJ\StudyInUSC\spring踩坑与学习\image\QQ截图20200412213110.png)
+![QQ截图20200412213110](项目spring踩坑与学习.assets/QQ截图20200412213110.png)
 
 ![QQ截图20200412213121](C:\WJJ\StudyInUSC\spring踩坑与学习\image\QQ截图20200412213121.png)
 
@@ -1238,7 +1238,7 @@ where id = #{id}
 
 # 修改过的IDEA设置
 
-![QQ截图20200419023533](C:\WJJ\StudyInUSC\spring踩坑与学习\image\QQ截图20200419023533.png)
+![QQ截图20200419023533](项目spring踩坑与学习.assets/QQ截图20200419023533.png)
 
 
 

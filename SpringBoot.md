@@ -221,7 +221,7 @@ public class HelloController {
 
 
 
-## 运行原理
+## 运行原理（没看懂）
 
 我们之前写的HelloSpringBoot，到底是怎么运行的呢，Maven项目，我们一般从pom.xml文件探究起；
 
@@ -295,17 +295,16 @@ public class SpringbootApplication {
 ```java
 @SpringBootApplication
 	@SpringBootConfiguration
-		@ComponentScan
-		@SpringBootConfiguration
+		@Configuration
+			@Component
 
 	@EnableAutoConfiguration
 		@AutoConfigurationPackage 
-			@Import({Registrar.class})
+			@Import(AutoConfigurationPackages.Registrar.class)
 		@Import({AutoConfigurationImportSelector.class}) 
 
+	@ComponentScan
 ```
-
-
 
 #### @SpringBootApplication
 
@@ -374,12 +373,13 @@ public @interface Configuration {}
 自动配置包
 
 ```java
-@Import({Registrar.class})
+@Import(AutoConfigurationPackages.Registrar.class)
 public @interface AutoConfigurationPackage {
+
 }
 ```
 
-#### @import({Registrar.class})
+#### @Import(AutoConfigurationPackages.Registrar.class)
 
 Spring底层注解@import ， 给容器中导入一个组件
 
@@ -500,15 +500,15 @@ private static Map<String, List<String>> loadSpringFactories(@Nullable ClassLoad
 
 我最初以为就是运行了一个main方法，没想到却开启了一个服务；
 
-- 
-- 
-- 
-- 
-- 
-- 
+```java
+@SpringBootApplication
+public class SpringbootStudyApplication {
 
-```
-@SpringBootApplicationpublic class SpringbootApplication {    public static void main(String[] args) {        SpringApplication.run(SpringbootApplication.class, args);    }}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootStudyApplication.class, args);
+    }
+
+}
 ```
 
 **SpringApplication.run分析**

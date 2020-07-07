@@ -34,7 +34,7 @@ docker ps
 
 ## 创建exchange
 
-![image-20200521123856290](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200521123856290.png)
+![image-20200521123856290](整合rabbitmq.assets/image-20200521123856290.png)
 
 Type为交换机类型 Durability表示持久化 即重启后交换机还存在
 
@@ -42,7 +42,7 @@ Type为交换机类型 Durability表示持久化 即重启后交换机还存在
 
 ## 创建消息队列
 
-![image-20200521123822511](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200521123822511.png)
+![image-20200521123822511](整合rabbitmq.assets/image-20200521123822511.png)
 
 
 
@@ -50,19 +50,19 @@ Type为交换机类型 Durability表示持久化 即重启后交换机还存在
 
 在exchange页面 点击exchange的名称进入	
 
-![image-20200521124553012](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200521124553012.png)
+![image-20200521124553012](整合rabbitmq.assets/image-20200521124553012.png)
 
 
 
 ## 发送消息
 
-![image-20200521124935696](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200521124935696.png)
+![image-20200521124935696](整合rabbitmq.assets/image-20200521124935696.png)
 
 
 
 ## 接受消息
 
-![image-20200521125025895](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200521125025895.png)
+![image-20200521125025895](整合rabbitmq.assets/image-20200521125025895.png)
 
 Ack Mode设置为此表示接受消息后自动删除消息
 

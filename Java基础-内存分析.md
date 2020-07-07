@@ -54,7 +54,7 @@ Class Computer {
 
 ```
 
-![image-20200527194650546](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200527194650546.png)
+![image-20200527194650546](Java基础-内存分析.assets/image-20200527194650546.png)
 
 首先加载主方法所在的类 加载代码、静态变量、静态方法、字符串常量
 
@@ -76,8 +76,8 @@ main方法里又创建了对象computer = null
 
 
 
-![1.png](https://www.sxt.cn/360shop/Public/admin/UEditor/20170516/1494925174358420.png)
+![1.png](Java基础-内存分析.assets/1494925174358420.png)
 
 图4-4 示例4-3内存分配图
 
-![neicunfenxi.png](https://www.sxt.cn/360shop/Public/admin/UEditor/20171026/1509008324820095.png)
+![neicunfenxi.png](Java基础-内存分析.assets/1509008324820095.png)

@@ -52,15 +52,15 @@ INSERT INTO `user`(`id`,`name`,`pwd`) VALUES
 
 1、创建普通maven项目（什么都不选）
 
-![image-20200605114957183](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605114957183.png)
+![image-20200605114957183](Mybatis.assets/image-20200605114957183.png)
 
 2、项目名
 
-![image-20200605115031376](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605115031376.png)
+![image-20200605115031376](Mybatis.assets/image-20200605115031376.png)
 
 3、记得添加‘-’
 
-![image-20200605115053434](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605115053434.png)
+![image-20200605115053434](Mybatis.assets/image-20200605115053434.png)
 
 4、删除src文件夹
 
@@ -90,11 +90,11 @@ INSERT INTO `user`(`id`,`name`,`pwd`) VALUES
 
 ### 新建子模块
 
-![image-20200605120433345](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605120433345.png)
+![image-20200605120433345](Mybatis.assets/image-20200605120433345.png)
 
-![image-20200605120459139](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605120459139.png)
+![image-20200605120459139](Mybatis.assets/image-20200605120459139.png)
 
-![image-20200605120539260](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605120539260.png)
+![image-20200605120539260](Mybatis.assets/image-20200605120539260.png)
 
 可以发现 子模块中也有父模块的包
 
@@ -133,9 +133,9 @@ mybatis-01下的resource文件中 创建mybatis-config.xml
 
 连接数据库 查看url
 
-![image-20200605122450037](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605122450037.png)
+![image-20200605122450037](Mybatis.assets/image-20200605122450037.png)
 
-![image-20200605122519269](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605122519269.png)	
+![image-20200605122519269](Mybatis.assets/image-20200605122519269.png)	
 
 完整的配置文件
 
@@ -170,7 +170,7 @@ mybatis-01下的resource文件中 创建mybatis-config.xml
 
 创建包
 
-![image-20200605123426792](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605123426792.png)
+![image-20200605123426792](Mybatis.assets/image-20200605123426792.png)
 
 ```java
 package edu.usc.util;
@@ -217,7 +217,7 @@ public class MybatisUtils {
 
 ### 编写代码
 
-![image-20200605131100786](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605131100786.png)
+![image-20200605131100786](Mybatis.assets/image-20200605131100786.png)
 
 #### 实体类
 
@@ -310,7 +310,7 @@ public interface UserDao {
 
 ### 测试
 
-![image-20200605133433717](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605133433717.png)
+![image-20200605133433717](Mybatis.assets/image-20200605133433717.png)
 
 ```java
 package edu.usc.dao;
@@ -351,7 +351,7 @@ public class UserDaoTest {
 
 1、 空指针异常
 
-![image-20200605133550416](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200605133550416.png)
+![image-20200605133550416](Mybatis.assets/image-20200605133550416.png)
 
 原因在`MybatisUtil`里对`sqlSessionFactory`进行了重复声明，以为在提升作用域的时候已经声明了，所以在下面的静态代码块中不应该再次声明
 
@@ -1141,7 +1141,7 @@ Now that the behavior of MyBatis is configured with the above configuration elem
 
 [官方文档](https://mybatis.org/mybatis-3/getting-started.html)
 
-![image-20200606111829520](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200606111829520.png)
+![image-20200606111829520](Mybatis.assets/image-20200606111829520.png)
 
 生命周期和作用域是至关重要的，错误的使用会导致
 
@@ -1171,7 +1171,7 @@ Now that the behavior of MyBatis is configured with the above configuration elem
 
 
 
-![image-20200606113156398](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200606113156398.png)
+![image-20200606113156398](Mybatis.assets/image-20200606113156398.png)
 
 ## Result Map 解决属性名和字段名不一致的问题
 
@@ -2317,7 +2317,7 @@ public void testSelectUserById() {
 
 ### 缓存原理
 
-![在这里插入图片描述](C:\WJJ\StudyInUSC\spring踩坑与学习\Mybatis-image\1.jpg)
+![在这里插入图片描述](Mybatis.assets/1.jpg)
 
 
 

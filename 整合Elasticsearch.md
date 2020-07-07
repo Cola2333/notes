@@ -91,7 +91,7 @@ PUT /megacorp/employee/1
 }
 ```
 
-![image-20200521221651766](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200521221651766.png)
+![image-20200521221651766](整合Elasticsearch.assets/image-20200521221651766.png)
 
 
 

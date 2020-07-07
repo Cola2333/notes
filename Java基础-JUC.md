@@ -435,7 +435,7 @@ class P {
 
 #### 虚假唤醒
 
-![image-20200530121326206](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200530121326206.png)
+![image-20200530121326206](Java基础-JUC.assets/image-20200530121326206.png)
 
 用if判断的话，唤醒后线程会从wait之后的代码开始运行，但是不会重新判断if条件，直接继续运行if代码块之后的代码，而如果使用while的话，也会从wait之后的代码运行，但是唤醒后会重新判断循环条件，如果不成立再执行while代码块之后的代码块，成立的话继续wait。
 
@@ -443,7 +443,7 @@ class P {
 
 #### JUC写法
 
-![image-20200530121544190](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200530121544190.png)
+![image-20200530121544190](Java基础-JUC.assets/image-20200530121544190.png)
 
 ```java
 package com.usc.juc;
@@ -1300,7 +1300,7 @@ class MyThread implements Runnable{
 
 ## Callable
 
-![image-20200531012602365](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200531012602365.png)
+![image-20200531012602365](Java基础-JUC.assets/image-20200531012602365.png)
 
 ### Callable与Runable的区别
 
@@ -1372,7 +1372,7 @@ new Thread(new FutureTask<V>( Callable )).start();
 
 ### CountDownLatch
 
-![image-20200531104248863](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200531104248863.png)
+![image-20200531104248863](Java基础-JUC.assets/image-20200531104248863.png)
 
 ```java
 package com.usc.juc.helper;
@@ -1633,9 +1633,9 @@ class MyCache {
 
 ​			但是如果当前的读释放了锁，那么下一个锁会给读
 
-![image-20200531140420965](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200531140420965.png)
+![image-20200531140420965](Java基础-JUC.assets/image-20200531140420965.png)
 
-![image-20200531140549801](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200531140549801.png)
+![image-20200531140549801](Java基础-JUC.assets/image-20200531140549801.png)
 
 
 
@@ -1647,9 +1647,9 @@ class MyCache {
 
 如果队列空了，也必须阻塞等待
 
-![image-20200531141630403](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200531141630403.png)
+![image-20200531141630403](Java基础-JUC.assets/image-20200531141630403.png)
 
-<img src="C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200531151342666.png" alt="image-20200531151342666" style="zoom: 67%;" />
+<img src="Java基础-JUC.assets/image-20200531151342666.png" alt="image-20200531151342666" style="zoom: 67%;" />
 
 ### 四种API
 
@@ -2149,7 +2149,7 @@ ForkJoin 在 JDK 1.7 ， 并行执行任务！提高效率。大数据量！
 
 类似于大数据中的MapReduce（把大任务拆分为	小任务）
 
-<img src="C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200601112810677.png" alt="image-20200601112810677" style="zoom:67%;" />
+<img src="Java基础-JUC.assets/image-20200601112810677.png" alt="image-20200601112810677" style="zoom:67%;" />
 
 ### ForkJoin特点（工作窃取）
 
@@ -2161,7 +2161,7 @@ ForkJoin 在 JDK 1.7 ， 并行执行任务！提高效率。大数据量！
 
 ### ForkJoin使用
 
-![image-20200601113306041](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200601113306041.png)
+![image-20200601113306041](Java基础-JUC.assets/image-20200601113306041.png)
 
 ```RecursiveAction```：无返回值
 
@@ -2379,7 +2379,7 @@ JMM ： Java内存模型，不存在的东西，概念！约定！
 
 ### 八大操作 
 
-![image-20200601175318358](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200601175318358.png)
+![image-20200601175318358](Java基础-JUC.assets/image-20200601175318358.png)
 
 lock （锁定）：作用于主内存的变量，把一个变量标识为线程独占状态
 
@@ -2618,7 +2618,7 @@ volatile可以避免指令重排：
 
 2、可以保证某些变量的内存可见性 （利用这些特性volatile实现了可见性）
 
-![image-20200601203611274](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200601203611274.png)
+![image-20200601203611274](Java基础-JUC.assets/image-20200601203611274.png)
 
 内存屏障可以保证内存凭证中间的指令的顺序 但是内存屏障之外的无法保证
 
@@ -2709,7 +2709,7 @@ public final int getAndAddInt(Object var1, long var2, int var4) {
 
 ## ABA问题
 
-​	![image-20200602102010447](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200602102010447.png)
+​	![image-20200602102010447](Java基础-JUC.assets/image-20200602102010447.png)
 
 两个线程同时去内存中取值，Thread2速度较快对A进行了两次修改，最终的修改结果和A的初始值相同。
 
@@ -2835,7 +2835,7 @@ public class Demo03 {
 
 **注意**
 
-![image-20200602111437977](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200602111437977.png)
+![image-20200602111437977](Java基础-JUC.assets/image-20200602111437977.png)
 
 也就是说 如果将泛型设置为```Integer```
 

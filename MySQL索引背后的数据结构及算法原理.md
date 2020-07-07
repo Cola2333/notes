@@ -38,7 +38,7 @@ key和指针互相间隔，节点两端是指针。
 
 图2是一个m = 4的B-Tree示意图。
 
-![2](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\2.png)
+![2](MySQL索引背后的数据结构及算法原理.assets/2.png)
 
 																										<center>图二</center>
 
@@ -79,7 +79,7 @@ B-Tree有许多变种，其中最常见的是B+Tree，例如MySQL就普遍使用
 
 2、内节点不存储data，只存储key；叶子节点不存储指针。
 
-图3是一个简单![3](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\3.png)的B+Tree示意。
+图3是一个简单![3](MySQL索引背后的数据结构及算法原理.assets/3.png)的B+Tree示意。
 
 
 
@@ -93,7 +93,7 @@ B-Tree有许多变种，其中最常见的是B+Tree，例如MySQL就普遍使用
 
 ### 带有顺序访问指针的B+Tree
 
-一般在数据库系统或文件系统中使用的B+Tree结构都在经典B+Tree的基础上进行了优化，增加了顺序访问指针![4](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\4.png)。
+一般在数据库系统或文件系统中使用的B+Tree结构都在经典B+Tree的基础上进行了优化，增加了顺序访问指针![4](MySQL索引背后的数据结构及算法原理.assets/4.png)。
 
 
 
@@ -117,7 +117,7 @@ B-Tree有许多变种，其中最常见的是B+Tree，例如MySQL就普遍使用
 
 目前计算机使用的主存基本都是随机读写存储器（RAM），现代RAM的结构和存取原理比较复杂，这里本文抛却具体差别，抽象出一个十分简单的存取模型来说明RAM的工作原理。
 
-![5 (1)](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\5 (1).png)
+![5 (1)](MySQL索引背后的数据结构及算法原理.assets/5 (1).png)
 
 从抽象角度看，主存是一系列的存储单元组成的矩阵，每个存储单元存储固定大小的数据。每个存储单元有唯一的地址，现代主存的编址规则比较复杂，这里将其简化成一个二维地址：通过一个行地址和一个列地址可以唯一定位到一个存储单元。图5展示了一个4 x 4的主存模型。
 
@@ -135,7 +135,7 @@ B-Tree有许多变种，其中最常见的是B+Tree，例如MySQL就普遍使用
 
 图6是磁盘的整体结构示意图。
 
-<img src="C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\2843224-46fb935cd31addbd.png" alt="img" style="zoom:67%;" />
+<img src="MySQL索引背后的数据结构及算法原理.assets/2843224-46fb935cd31addbd.png" alt="img" style="zoom:67%;" />
 
 <center>图6</center>
 
@@ -143,7 +143,7 @@ B-Tree有许多变种，其中最常见的是B+Tree，例如MySQL就普遍使用
 
 图7是磁盘结构的示意图。
 
-<img src="C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\2843224-56f2056f0b36009f.png" alt="img" style="zoom:67%;" />
+<img src="MySQL索引背后的数据结构及算法原理.assets/2843224-56f2056f0b36009f.png" alt="img" style="zoom:67%;" />
 
 <center>图7</center>
 
@@ -195,13 +195,13 @@ $floor$表示向下取整。由于B+Tree内节点去掉了data域，因此可以
 
 MyISAM引擎使用B+Tree作为索引结构，叶节点的data域存放的是数据记录的地址。下图是MyISAM索引的原理图：
 
-![8](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\8.png)
+![8](MySQL索引背后的数据结构及算法原理.assets/8.png)
 
 <center>图8</center>
 
 这里设表一共有三列，假设我们以Col1为主键，则图8是一个MyISAM表的主索引（Primary key）示意。**可以看出MyISAM的索引文件仅仅保存数据记录的地址**。在MyISAM中，主索引和辅助索引（Secondary key）在结构上没有任何区别，只是主索引要求key是唯一的，而辅助索引的key可以重复。如果我们在Col2上建立一个辅助索引，则此索引的结构如下图所示：
 
-![9](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\9.png)
+![9](MySQL索引背后的数据结构及算法原理.assets/9.png)
 
 <center>图9</center>
 
@@ -215,7 +215,7 @@ MyISAM的索引方式也叫做“非聚集”的，之所以这么称呼是为�
 
 第一个重大区别是InnoDB的数据文件本身就是索引文件。从上文知道，MyISAM索引文件和数据文件是分离的，索引文件仅保存数据记录的地址。而**在InnoDB中，表数据文件本身就是按B+Tree组织的一个索引结构，这棵树的叶节点data域保存了完整的数据记录**。这个索引的key是数据表的主键，因此InnoDB表数据文件本身就是主索引。
 
-![10](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\10.png)
+![10](MySQL索引背后的数据结构及算法原理.assets/10.png)
 
 <center>图10</center>
 
@@ -223,7 +223,7 @@ MyISAM的索引方式也叫做“非聚集”的，之所以这么称呼是为�
 
 第二个与MyISAM索引的不同是**InnoDB的辅助索引data域存储相应记录主键的值而不是地址**。换句话说，InnoDB的所有辅助索引都引用主键作为data域。例如，图11为定义在Col3上的一个辅助索引：
 
-![11](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\11.png)
+![11](MySQL索引背后的数据结构及算法原理.assets/11.png)
 
 <center>图11</center>
 
@@ -243,7 +243,7 @@ MySQL的优化主要分为结构优化（Scheme optimization）和查询优化�
 
 为了讨论索引策略，需要一个数据量不算小的数据库作为示例。本文选用MySQL官方文档中提供的示例数据库之一：employees。这个数据库关系复杂度适中，且数据量较大。下图是这个数据库的E-R关系图（引用自MySQL官方手册）：
 
-![12](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\12.png)
+![12](MySQL索引背后的数据结构及算法原理.assets/12.png)
 
 <center>图12</center>
 
@@ -572,7 +572,7 @@ SHOW PROFILES;
 
 如果表使用自增主键，那么每次插入新的记录，记录就会顺序添加到当前索引节点的后续位置，当一页写满，就会自动开辟一个新的页。如下图所示：
 
-![13](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\13.png)
+![13](MySQL索引背后的数据结构及算法原理.assets/13.png)
 
 <center>图13</center>
 
@@ -580,7 +580,7 @@ SHOW PROFILES;
 
 如果使用非自增主键（如果身份证号或学号等），由于每次插入主键的值近似于随机，因此每次新纪录都要被插到现有索引页得中间某个位置：
 
-![14](C:\WJJ\StudyInUSC\spring踩坑与学习\MySQL-image\14.png)
+![14](MySQL索引背后的数据结构及算法原理.assets/14.png)
 
 此时MySQL不得不为了将新记录插到合适位置而移动数据，甚至目标页面可能已经被回写到磁盘上而从缓存中清掉，此时又要从磁盘上读回来，这增加了很多开销，同时频繁的移动、分页操作造成了大量的碎片，得到了不够紧凑的索引结构，后续不得不通过OPTIMIZE TABLE来重建表并优化填充页面。
 

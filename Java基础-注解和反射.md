@@ -255,13 +255,13 @@ public class Test04 {
 
 ### 类加载内存分析
 
-![image-20200527104822823](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200527104822823.png)
+![image-20200527104822823](Java基础-注解和反射.assets/image-20200527104822823.png)
 
-![image-20200527104909148](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200527104909148.png)
+![image-20200527104909148](Java基础-注解和反射.assets/image-20200527104909148.png)
 
-![image-20200527111441445](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200527111441445.png)
+![image-20200527111441445](Java基础-注解和反射.assets/image-20200527111441445.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200428220835671.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1R4YkxjeQ==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](Java基础-注解和反射.assets/20200428220835671.png)
 
 ```java
 public class Test05 {
@@ -304,7 +304,7 @@ class A {
 
 ### 分析类的初始化
 
-![image-20200527105915714](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200527105915714.png)
+![image-20200527105915714](Java基础-注解和反射.assets/image-20200527105915714.png)
 
 ```java
 //测试类什么时候会初始化
@@ -358,9 +358,9 @@ class Son extends Father {
 
 ### 类的加载器
 
-![image-20200527111620537](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200527111620537.png)
+![image-20200527111620537](Java基础-注解和反射.assets/image-20200527111620537.png)
 
-![image-20200527111544077](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200527111544077.png)
+![image-20200527111544077](Java基础-注解和反射.assets/image-20200527111544077.png)
 
 ```java
 public class Test07 {
@@ -426,7 +426,7 @@ public class Test07 {
 
 ```
 
-![img](https://img-blog.csdnimg.cn/20200428220801738.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1R4YkxjeQ==,size_16,color_FFFFFF,t_70)
+![img](Java基础-注解和反射.assets/20200428220801738.png)
 
 
 

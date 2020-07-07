@@ -24,7 +24,7 @@ Spring理念 : 使现有技术更加实用。本身就是一个大杂烩 , 整�
 
 ## 组成
 
-![七大模块](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\SouthEast.jpg)
+![七大模块](Spring.assets/SouthEast.jpg)
 
 组成 Spring 框架的每个模块（或组件）都可以单独存在，或者与其他一个或多个模块联合实现。每个模块的功能如下：
 
@@ -224,7 +224,7 @@ public void test(){
 
 Spring容器在初始化时先读取配置文件，根据配置文件或元数据创建与组织对象存入容器中，程序使用时再从Ioc容器中取出需要的对象。
 
-![container magic](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\container-magic.png)
+![container magic](Spring.assets/container-magic.png)
 
 采用XML方式配置Bean的时候，Bean的定义信息是和实现分离的，而采用注解的方式可以把两者合为一体，Bean的定义信息直接以注解的形式定义在实现类中，从而达到了零配置的目的。
 
@@ -1439,7 +1439,7 @@ public class MyConfig {
 
 学习aop之前 , 我们要先了解一下代理模式！
 
-![image-20200613102702670](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\image-20200613102702670.png)
+![image-20200613102702670](Spring.assets/image-20200613102702670.png)
 
 ### 静态代理角色分析
 
@@ -1621,7 +1621,7 @@ public class Client {
 
 聊聊AOP：纵向开发，横向开发
 
-![image-20200613110705328](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\image-20200613110705328.png)
+![image-20200613110705328](Spring.assets/image-20200613110705328.png)
 
 ### 静态代理的优点和缺点
 
@@ -1658,19 +1658,19 @@ public class Client {
 
 【InvocationHandler：调用处理程序】https://docs.oracle.com/javase/8/docs/api/
 
-![image-20200613151928993](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\image-20200613151928993.png)
+![image-20200613151928993](Spring.assets/image-20200613151928993.png)
 
-![image-20200613152321069](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\image-20200613152321069.png)
+![image-20200613152321069](Spring.assets/image-20200613152321069.png)
 
 【Proxy  : 代理】https://docs.oracle.com/javase/8/docs/api/
 
 ![image-20200613152718734](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\image-20200613152718734.png)
 
-![image-20200613152737234](C:\Users\WANG\AppData\Roaming\Typora\typora-user-images\image-20200613152737234.png)
+![image-20200613152737234](Spring.assets/image-20200613152737234.png)
 
 
 
-![image-20200613152831491](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\image-20200613152831491.png)
+![image-20200613152831491](Spring.assets/image-20200613152831491.png)
 
 ```java
 //生成代理类
@@ -1876,7 +1876,7 @@ AOP（Aspect Oriented Programming）意为：面向切面编程，通过预编�
 
 
 
-![img](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\aop1.jpg)
+![img](Spring.assets/aop1.jpg)
 
 
 
@@ -1896,13 +1896,13 @@ AOP（Aspect Oriented Programming）意为：面向切面编程，通过预编�
 
 
 
-![img](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\aop2.jpg)
+![img](Spring.assets/aop2.jpg)
 
 SpringAOP中，通过Advice定义横切逻辑，Spring中支持5种类型的Advice:
 
 
 
-![img](C:\WJJ\StudyInUSC\spring踩坑与学习\Spring-image\aop3.jpg)
+![img](Spring.assets/aop3.jpg)
 
 即 Aop 在 不改变原有代码的情况下，去增加新的功能。
 
